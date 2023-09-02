@@ -1,5 +1,5 @@
 # XtoMKV_con
-Convert any video files to MKV file format without re-encoding using ffmpeg
+Convert any video files to MKV file format using ffmpeg without re-encoding using ffmpeg
 
 
 XtoMKV_con is a simple utility that helps you convert all non ".mkv" files in a folder to ".mkv", deleting the original files after conversion.
