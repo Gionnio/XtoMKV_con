@@ -34,8 +34,8 @@ if ! command -v ffmpeg &>/dev/null; then
 fi
 
 # Specify the source and destination folders
-source_folder="/path/to/your/source/folder"
-destination_folder="/path/to/your/destination/folder"
+source_folder="/path/to/your/source/folder"     #change me
+destination_folder="/path/to/your/destination/folder"       #change me
 
 # Create the destination folder if it doesn't exist
 mkdir -p "$destination_folder"
