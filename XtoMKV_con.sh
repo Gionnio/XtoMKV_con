@@ -21,12 +21,12 @@ if ! command -v ffmpeg &>/dev/null; then
     sudo apt-get update
     sudo apt-get install ffmpeg
   elif [[ "$OSTYPE" == "msys"* ]]; then
-    # Windows (using Chocolatey)
-    if ! command -v choco &>/dev/null; then
-      echo "Chocolatey is not installed. Installing..."
-      Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-    fi
-    choco install ffmpeg
+  # Windows (using Windows Package Manager - winget)
+  if ! command -v winget &>/dev/null; then
+    echo "Windows Package Manager (winget) is not available. Please install it and ensure FFmpeg is installed manually."
+    exit 1
+  fi
+  winget install -e --id FFmpeg.FFmpeg
   else
     echo "Unsupported operating system. Please ensure FFmpeg is installed manually."
     exit 1
@@ -53,4 +53,3 @@ find "$source_folder" -type f ! -name "*.mkv" -exec sh -c '
 ' sh {} +
 
 echo "Conversion completed!"
-
