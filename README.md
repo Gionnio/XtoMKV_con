@@ -16,12 +16,9 @@ If you're on macOS, XtoMKV.sh will install FFmpeg via Homebrew if it's not alrea
 
 If you're on Windows, XtoMKV.sh will install FFmpeg via winget (I don't have a Windows machine at the moment so I cannot test it)
 
-
 ## Demo
 
 ![](https://s11.gifyu.com/images/SgYQi.gif)
-
-
 
 ## Installation
 
@@ -36,6 +33,14 @@ sh ./XtoMKV.sh
 You will be asked for input and output folder before stating conversion.
 
 Hope you like it! Feel free to fork and improve it!
+
+## Roadmap
+
+- Initial release 
+
+- Add Terminal-User Interface
+
+- Modify FFmpeg settings before conversion
 
 ## License
 
