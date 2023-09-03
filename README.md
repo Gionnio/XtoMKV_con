@@ -19,7 +19,7 @@ If you're on Windows, XtoMKV.sh will install FFmpeg via winget (I don't have a W
 
 ## Demo
 
-![](https://gifyu.com/image/SgYQi)
+![](https://s11.gifyu.com/images/SgYQi.gif)
 
 
 
