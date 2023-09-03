@@ -54,7 +54,7 @@ fi
 # Create the destination folder if it doesn't exist
 mkdir -p "$destination_folder"
 
-# Find all non-.mkv video files in the source folder
+# Find all non-.mkv video files in the source folder and convert them to .mkv
 find "$source_folder" -type f ! -name "*.mkv" -exec sh -c '
   for file do
     # Get the file name without extension

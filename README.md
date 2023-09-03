@@ -19,20 +19,15 @@ If you're on Windows, XtoMKV.sh will install FFmpeg via winget (I don't have a W
 
 ## Installation
 
-Simply download XtoMKV.sh
-Set video files path:
+Simply download XtoMKV.sh and make it executable with:
 ```bash
-source_folder=**"/path/to/your/source/folder"**
-destination_folder=**"/path/to/your/source/folder"**
-```
-Make it executable with:
-```
 chmod +x XtoMKV.sh
 ```
 and run it
 ```
 sh ./XtoMKV.sh
 ```
+You will be asked for input and output folder before stating conversion.
 
 Hope you like it! Feel free to fork and improve it!
 
