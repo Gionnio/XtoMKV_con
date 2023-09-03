@@ -17,6 +17,12 @@ If you're on macOS, XtoMKV.sh will install FFmpeg via Homebrew if it's not alrea
 If you're on Windows, XtoMKV.sh will install FFmpeg via winget (I don't have a Windows machine at the moment so I cannot test it)
 
 
+## Demo
+
+![](https://pasteboard.co/frG7F4fOvxrq.gif)
+
+
+
 ## Installation
 
 Simply download XtoMKV.sh and make it executable with:
