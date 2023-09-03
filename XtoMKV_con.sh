@@ -21,21 +21,35 @@ if ! command -v ffmpeg &>/dev/null; then
     sudo apt-get update
     sudo apt-get install ffmpeg
   elif [[ "$OSTYPE" == "msys"* ]]; then
-  # Windows (using Windows Package Manager - winget)
-  if ! command -v winget &>/dev/null; then
-    echo "Windows Package Manager (winget) is not available. Please install it and ensure FFmpeg is installed manually."
-    exit 1
-  fi
-  winget install -e --id FFmpeg.FFmpeg
+    # Windows (using Windows Package Manager - winget)
+    if ! command -v winget &>/dev/null; then
+      echo "Windows Package Manager (winget) is not available. Please install it and ensure FFmpeg is installed manually."
+      exit 1
+    fi
+    winget install -e --id FFmpeg.FFmpeg
   else
     echo "Unsupported operating system. Please ensure FFmpeg is installed manually."
     exit 1
   fi
 fi
 
-# Specify the source and destination folders
-source_folder="/path/to/your/source/folder"     #change me
-destination_folder="/path/to/your/destination/folder"       #change me
+# Ask the user if source and destination folders should be the same or different
+echo "Do you want the source and destination folders to be the same? (y/n)"
+read same_folders
+
+if [[ "$same_folders" == "y" || "$same_folders" == "Y" ]]; then
+  # If same folders, ask for a single folder path
+  echo "Enter the path to the source and destination folder (must be the same):"
+  read source_and_destination_folder
+  source_folder="$source_and_destination_folder"
+  destination_folder="$source_and_destination_folder"
+else
+  # If different folders, ask for separate folder paths
+  echo "Enter the path to the source folder:"
+  read source_folder
+  echo "Enter the path to the destination folder:"
+  read destination_folder
+fi
 
 # Create the destination folder if it doesn't exist
 mkdir -p "$destination_folder"
