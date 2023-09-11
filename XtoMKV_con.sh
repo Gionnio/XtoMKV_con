@@ -1,4 +1,5 @@
 #!/bin/bash
+# This is XtoMKV_con! - by Gianluca Checcarini 
 
 # Function to check if FFmpeg is installed
 check_ffmpeg() {
@@ -7,6 +8,7 @@ check_ffmpeg() {
 
     # Check the operating system and use the appropriate package manager
     if [[ "$OSTYPE" == "darwin"* ]]; then
+    echo "macOS detected. Installing ffmpeg via Homebrew..."
       # macOS (using Homebrew)
       if ! command -v brew &>/dev/null; then
         echo "Homebrew is not installed. Installing..."
@@ -14,6 +16,7 @@ check_ffmpeg() {
       fi
       brew install ffmpeg
     elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+        echo "GNU/Linux detected. Installing ffmpeg via package manager..."
       # Linux (using APT)
       if ! command -v apt &>/dev/null; then
         echo "APT is not available on this system. Please ensure FFmpeg is installed manually."
@@ -41,20 +44,20 @@ check_ffmpeg() {
 check_ffmpeg
 
 # Ask the user if source and destination folders should be the same or different
-echo "Do you want the source and destination folders to be the same? (y/n)"
+echo "Do you want to save the MKV file(s) in the same folder as the input file(s)? (y/n)"
 read same_folders
 
 if [[ "$same_folders" == "y" || "$same_folders" == "Y" ]]; then
   # If same folders, ask for a single folder path
-  echo "Enter the path to the source and destination folder (must be the same):"
+  echo "Enter the path to the file(s):"
   read source_and_destination_folder
   source_folder="$source_and_destination_folder"
   destination_folder="$source_and_destination_folder"
 else
   # If different folders, ask for separate folder paths
-  echo "Enter the path to the source folder:"
+  echo "Input folder:"
   read source_folder
-  echo "Enter the path to the destination folder:"
+  echo "Output folder:"
   read destination_folder
 fi
 
