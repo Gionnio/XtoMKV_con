@@ -14,7 +14,7 @@ Automatically checks for the presence of FFmpeg in the operating system and inst
 
 If you're on macOS, XtoMKV.sh will install FFmpeg via Homebrew if it's not already installed. If Homebrew is missing, it will be installed as well.
 
-If you're on Windows, XtoMKV.sh will install FFmpeg via winget (I don't have a Windows machine at the moment so I cannot test it)
+If you're on Windows, XtoMKV.sh will install FFmpeg via winget (I don't have a Windows machine at the moment so I cannot test it) (Windows Subsystem for Linux -wsl- required) - TO BE TESTED
 
 ## Demo
 
